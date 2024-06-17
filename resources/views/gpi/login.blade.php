@@ -22,7 +22,7 @@
         <input type="text" name="name" placeholder="Nama" />
         <input type="email" name="email" placeholder="E-mail" />
         <input type="text" name="alamat" placeholder="Alamat" />
-        <input type="text" name="nomorHp" placeholder="No. Handphone" />
+        <input type="text" name="noHp" placeholder="No. Handphone" />
         <input type="password" name="password" placeholder="Password" />
         <input type="password" name="password_confirmation" placeholder="Konfirmasi Password" />
         <button>Daftar</button>
