@@ -19,7 +19,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('gpi.login');
+        return view('auth.register');
     }
 
     /**
@@ -33,16 +33,17 @@ class RegisteredUserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'alamat' => ['required', 'string', 'max:255'],
-            'noHP' => ['required', 'string', 'max:255'],
+            'nomorHp' => ['required', 'string', 'max:255'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
             'alamat' => $request->alamat,
-            'noHP' => $request->noHP,
+            'nomorHp' => $request->nomorHp,
+            'password' => Hash::make($request->password),
+            'role' => $request->role,
         ]);
 
         event(new Registered($user));
